@@ -16,7 +16,6 @@ public class NomalEnemy : MonoBehaviour
 
     void Start()
     {
-        
         if (sprite == null)
         {
             sprite = GetComponent<SpriteRenderer>();
