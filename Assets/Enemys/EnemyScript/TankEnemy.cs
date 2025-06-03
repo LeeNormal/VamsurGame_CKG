@@ -11,7 +11,6 @@ public class TankEnemy : MonoBehaviour
 
     public Transform playerTransform;   // 플레이어 위치
     public GameObject expOrbPrefab;     // 인스펙터에 프리팹 연결
-    bool isDead = false;
 
     void Start()
     {
@@ -44,8 +43,6 @@ public class TankEnemy : MonoBehaviour
     {
         if (Tank_CurHp <= 0)
         {
-            isDead = true;
-
             Instantiate(expOrbPrefab, transform.position, Quaternion.identity);
 
             Destroy(gameObject);

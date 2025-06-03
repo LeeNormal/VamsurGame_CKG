@@ -12,7 +12,6 @@ public class NomalEnemy : MonoBehaviour
 
     public Transform playerTransform;   // 플레이어 위치
     public GameObject expOrbPrefab;     // 인스펙터에 프리팹 연결
-    bool isDead = false;
 
     void Start()
     {
@@ -56,8 +55,6 @@ public class NomalEnemy : MonoBehaviour
     {
         if(Normal_CurHp <= 0)
         {
-            isDead = true;
-
             Instantiate(expOrbPrefab, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
