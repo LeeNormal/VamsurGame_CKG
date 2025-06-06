@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188f3ec218e5b2346bf9e21e622b273e, type: 3}
   m_Name: TankEnemyData
   m_EditorClassIdentifier: 
-  enemyName: TankEnemyData
+  enemyName: Tank_Enemy
   maxHp: 150
-  baseSpeed: 1.5
+  baseSpeed: 1
   speedLevels:
-  - time: 10
-    speed: 2
-  - time: 30
-    speed: 2.5
-  - time: 50
-    speed: 3
+  - time: 60
+    speed: 1
+  - time: 60
+    speed: 1
+  - time: 60
+    speed: 1

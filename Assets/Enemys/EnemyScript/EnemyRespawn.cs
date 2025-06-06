@@ -1,43 +1,80 @@
+using System.Collections.Generic;
+using Enemys.EnemyScript;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.Serialization;
 
 public class EnemyRespawn : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;
-    public Transform player;
+    [SerializeField]
+    private GameObject _normalEnemy;
+    [SerializeField]
+    private GameObject _tankEnemy;
 
-    private ObjectPool<GameObject> _enemyPool;
+    // private ObjectPool<Enemy> _normalEnemyPool;
+    // private ObjectPool<Enemy> _tankEnemyPool;
     
-    private void Start()
+    List<GameObject> NormalEnemys = new List<GameObject>(10);
+    List<GameObject> TankEnemys = new List<GameObject>(10);
+
+    public enum ObjectType
     {
-        _enemyPool = new ObjectPool<GameObject>(
-            createFunc: () =>
-            {
-                var idx = Random.Range(0, enemyPrefabs.Length);
-                var go = Instantiate(enemyPrefabs[idx]);
-                //go.GetComponent<NomalEnemy>().in;
-                return go;
-            },
-            actionOnGet: go =>
-            {
-                go.SetActive(true);
-                //go.transform.position = GetRandomSpawnPosition();
-            },
-            actionOnRelease: go =>
-            {
-                go.SetActive(false);
-            },
-            actionOnDestroy: Destroy,
-            defaultCapacity: 10,
-            maxSize: 50
-        );
+        NormalEnemy,
+        TankEnemy,
+    };
+
+    private GameObject GetPrefabForType(ObjectType type)
+    {
+        switch (type)
+        {
+            case ObjectType.NormalEnemy:
+                return _normalEnemy;
+            case ObjectType.TankEnemy:
+                return _tankEnemy;
+        }
+
+        return null;
     }
 
-    private void Update()
+    private List<GameObject> GetListForType(ObjectType type)
     {
-        if (Input.GetKeyDown(KeyCode.Space)) // 테스트용 소환
+        switch (type)
         {
-            //enemyPool.Get();
+            case ObjectType.NormalEnemy:
+                return NormalEnemys;
+            case ObjectType.TankEnemy:
+                return TankEnemys;
         }
+
+        return null;
+    }
+
+    public GameObject RequestEnemyObject(ObjectType type)
+    {
+        GameObject obj = null;
+        
+        List<GameObject> list = GetListForType(type);
+        GameObject prefab = GetPrefabForType(type);
+
+        for (int i = 0; i < list.Count; i++)
+        {
+            if (list[i].activeInHierarchy)
+            {
+                obj = list[i];
+                obj.SetActive(true);
+                break;
+            }
+        }
+
+        if (!obj)
+        {
+            obj = Instantiate(prefab);
+            obj.name = prefab.name;
+            obj.transform.SetParent(transform);
+            list.Add(obj);
+        }
+
+        return obj;
     }
 }

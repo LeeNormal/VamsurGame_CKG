@@ -19,29 +19,6 @@ public class MagicJing : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        
-    }
-
-    public void Enemy_Damage(float nHit)
-    {
-        
-    }
-    // public void Tank_Damage(float nHit)
-    // {
-    //     //tankEnemy.tankCurHp -= nHit;
-    //     Debug.Log("���� ������ �޴��� : " + tankEnemy.tankCurHp);
-    //     Debug.Log("���� ���� ������ : " + nHit);
-    // }
-
-    // public void Normal_Damage(float nHit)
-    // {
-    //     //normalEnemy.normalCurHp -= nHit;
-    //     Debug.Log("���� ������ �޴��� : " + normalEnemy.normalCurHp);
-    //     Debug.Log("���� ���� ������ : " + nHit);
-    // }
-
     public void OnTriggerStay2D(Collider2D other)
     {
         if (!other.CompareTag("Enemy")) return;

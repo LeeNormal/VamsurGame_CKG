@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3c0027c84b538f746957031dd45b4da3, type: 3}
   m_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.36, y: 0.39}
@@ -122,12 +122,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3916679565556358711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41189e45d8497724ab71c502cd6ad6e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 13e710eae09dde143974fe8bc3024058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Normal_CurHp: 0
-  playerTransform: {fileID: 0}
-  expOrbPrefab: {fileID: 0}
+  enemyData: {fileID: 11400000, guid: 576ad6be5d398884faa43aaf8e5dd88a, type: 2}
+  expOrbPrefab: {fileID: 8056937359039528664, guid: 71e44518e04432346992e065bf5e0bd0, type: 3}
+  _curHp: 0
 --- !u!70 &1647159421546847099
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

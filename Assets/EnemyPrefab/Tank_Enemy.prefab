@@ -122,12 +122,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5742122366338108821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd5981b22599cf94b91851da6209d2d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 13e710eae09dde143974fe8bc3024058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tank_CurHp: 0
-  playerTransform: {fileID: 0}
-  expOrbPrefab: {fileID: 0}
+  enemyData: {fileID: 11400000, guid: 79f861b77ead9144b9e6d4703642e969, type: 2}
+  expOrbPrefab: {fileID: 8056937359039528664, guid: 71e44518e04432346992e065bf5e0bd0, type: 3}
+  _curHp: 0
 --- !u!70 &8612849009826264946
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
