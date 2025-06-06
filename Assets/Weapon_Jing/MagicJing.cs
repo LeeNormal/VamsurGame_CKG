@@ -1,63 +1,54 @@
+using Enemys.EnemyScript;
 using UnityEngine;
 
 public class MagicJing : MonoBehaviour
 {
-    
+    private Enemy _enemy;
 
-    NomalEnemy normalEnemy;
-    TankEnemy tankEnemy;
+    private float _jingDamage = 20f;
 
-    float Jing_Damage = 1.0f;
-
-    void Start()
+    private void Start()
     {
-        if(normalEnemy == null)
+        if(!_enemy)
         {
-            normalEnemy = GetComponent<NomalEnemy>();
+            _enemy = GetComponent<Enemy>();
         }
-        else { }
-        if(tankEnemy == null)
+        else
         {
-            tankEnemy = GetComponent<TankEnemy>();
+            Debug.LogError("ì  ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì°¾ì„ìˆ˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
         }
     }
 
-    void Update()
+    private void Update()
     {
         
     }
 
-    public void Tank_Damage(float nHit)
+    public void Enemy_Damage(float nHit)
     {
-        tankEnemy.Tank_CurHp -= nHit;
-        Debug.Log("¸ó½ºÅÍ µ¥¹ÌÁö ¹Ş´ÂÁß : " + tankEnemy.Tank_CurHp);
-        Debug.Log("¹ŞÀº °ø°İ µ¥¹ÌÁö : " + nHit);
+        
     }
+    // public void Tank_Damage(float nHit)
+    // {
+    //     //tankEnemy.tankCurHp -= nHit;
+    //     Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş´ï¿½ï¿½ï¿½ : " + tankEnemy.tankCurHp);
+    //     Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + nHit);
+    // }
 
-    public void Normal_Damage(float nHit)
-    {
-        normalEnemy.Normal_CurHp -= nHit;
-        Debug.Log("¸ó½ºÅÍ µ¥¹ÌÁö ¹Ş´ÂÁß : " + normalEnemy.Normal_CurHp);
-        Debug.Log("¹ŞÀº °ø°İ µ¥¹ÌÁö : " + nHit);
-    }
+    // public void Normal_Damage(float nHit)
+    // {
+    //     //normalEnemy.normalCurHp -= nHit;
+    //     Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş´ï¿½ï¿½ï¿½ : " + normalEnemy.normalCurHp);
+    //     Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + nHit);
+    // }
 
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D other)
     {
-        if (collision.CompareTag("Enemy"))
-        {
-            tankEnemy = collision.gameObject.GetComponent<TankEnemy>();
-            normalEnemy = collision.gameObject.GetComponent<NomalEnemy>();
-            if (tankEnemy != null)
-            {
-                Tank_Damage(Jing_Damage);
-            }
-            else { }
-            if (normalEnemy != null)
-            {
-                Normal_Damage(Jing_Damage);
-            }
-            else { }
-        }
+        if (!other.CompareTag("Enemy")) return;
+        _enemy = other.GetComponent<Enemy>();
+        if (!_enemy) return;
+        _enemy.TakeDamage(_jingDamage);
+        Debug.Log("ë°ë¯¸ì§€ë¥¼ ì…í˜”ìŠµë‹ˆë‹¤." + _enemy._curHp);
     }
 
     
