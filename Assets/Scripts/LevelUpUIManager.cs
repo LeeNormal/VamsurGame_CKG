@@ -93,7 +93,7 @@ public class LevelUpUIManager : MonoBehaviour
             }
 
             WeaponBase weaponA = weaponList[Random.Range(0, weaponList.Count)];
-            UpgradeType upgradeA = GetRandomUpgradeType();
+            UpgradeType upgradeA = GetRandomUpgradeType(weaponA);
             option1 = new LevelUpOption(weaponA, upgradeA);
 
             WeaponBase weaponB;
@@ -102,7 +102,7 @@ public class LevelUpUIManager : MonoBehaviour
             do
             {
                 weaponB = weaponList[Random.Range(0, weaponList.Count)];
-                upgradeB = GetRandomUpgradeType();
+                upgradeB = GetRandomUpgradeType(weaponB);
                 tryCount++;
             } while (weaponB == weaponA && upgradeB == upgradeA && tryCount < 30);
 
@@ -150,18 +150,28 @@ public class LevelUpUIManager : MonoBehaviour
             case UpgradeType.Count:
                 if (weapon is OrbitSwordWeapon orbitSword)
                     orbitSword.UpgradeCount();
+                else if (weapon is EnergyBallWeapon energyBall)
+                    energyBall.UpgradeProjectileCount();
                 break;
         }
 
         CloseLevelUpUI();
     }
 
-    private UpgradeType GetRandomUpgradeType()
+    private UpgradeType GetRandomUpgradeType(WeaponBase weapon)
     {
-        float rand = Random.value;
-        if (rand < 0.33f) return UpgradeType.Count;
-        else if (rand < 0.66f) return UpgradeType.Count;
-        else return UpgradeType.Count;
+        List<UpgradeType> validTypes = new();
+
+        validTypes.Add(UpgradeType.Damage);
+        validTypes.Add(UpgradeType.Speed);
+
+        if (weapon.CanUpgradeCount())
+            validTypes.Add(UpgradeType.Count);
+
+        if (validTypes.Count == 0)
+            return UpgradeType.Damage;
+
+        return validTypes[Random.Range(0, validTypes.Count)];
     }
 
     private string GetUpgradeText(WeaponBase weapon, UpgradeType type)
@@ -170,7 +180,7 @@ public class LevelUpUIManager : MonoBehaviour
         {
             UpgradeType.Damage => $"{weapon.weaponName} 데미지 업",
             UpgradeType.Speed => $"{weapon.weaponName} 속도 업",
-            UpgradeType.Count => $"{weapon.weaponName} 칼 개수 업",
+            UpgradeType.Count => $"{weapon.weaponName} 개수 업",
             _ => "???"
         };
     }

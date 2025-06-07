@@ -66,7 +66,6 @@ public class WeaponManager : MonoBehaviour
             equippedWeapons.Add(weapon);
             Debug.Log($"{weapon.weaponName} 무기 장착 완료!");
 
-            // !!! 추가 !!!
             availableWeaponPrefabs.Remove(weaponPrefab); // 장착한 무기는 리스트에서 제거
         }
         else
