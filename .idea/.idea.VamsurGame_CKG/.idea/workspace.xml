@@ -5,38 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2d0a7d1-23db-4247-b13b-cb7edc5413f6" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VamsurGame_CKG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VamsurGame_CKG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/Gem-Animation.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/Gem-Animation.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-1.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-1.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnyTem/Exp/gem-5.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyPrefab/Nomal_Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyPrefab/Nomal_Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyPrefab/Tank_Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyPrefab/Tank_Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyPoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyPoolManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NotoSansKR-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NotoSansKR-VariableFont_wght SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/PlayerScript.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/cherry.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/cherry.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/EnergyBall_Weapon/EnergyBallWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/EnergyBall_Weapon/EnergyBallWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/EnergyBall_Weapon/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/EnergyBall_Weapon/Projectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/OrbitSword_Weapon/OrbitSwordCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/OrbitSword_Weapon/OrbitSwordCollider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/OrbitSword_Weapon/OrbitingSword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/OrbitSword_Weapon/OrbitingSword.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/NormalEnemyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/NormalEnemyData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/TankEnemyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/TankEnemyData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749191433442</updated>
       <workItem from="1749191434849" duration="1818000" />
-      <workItem from="1749370695217" duration="1537000" />
+      <workItem from="1749370695217" duration="2138000" />
     </task>
     <servers />
   </component>

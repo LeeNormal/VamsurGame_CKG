@@ -18,7 +18,10 @@ MonoBehaviour:
   speedLevels:
   - time: 60
     speed: 1
-  - time: 60
-    speed: 1
-  - time: 60
-    speed: 1
+    hp: 150
+  - time: 120
+    speed: 2
+    hp: 200
+  - time: 180
+    speed: 3
+    hp: 350

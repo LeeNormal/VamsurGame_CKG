@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Nomal_Enemy
   maxHp: 100
-  baseSpeed: 3
+  baseSpeed: 1
   speedLevels:
-  - time: 10
+  - time: 60
+    speed: 2
+    hp: 140
+  - time: 120
     speed: 3
-  - time: 30
+    hp: 180
+  - time: 180
     speed: 4
-  - time: 50
-    speed: 5
+    hp: 220
