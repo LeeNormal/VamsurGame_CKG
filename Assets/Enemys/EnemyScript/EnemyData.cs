@@ -10,13 +10,14 @@ namespace Enemys.EnemyScript
         public float baseSpeed;
 
         [System.Serializable]
-        public struct SpeedLevel
+        public struct StatusLevelUp
         {
             public int time;
             public float speed;
+            public int hp;
         }
 
-        public SpeedLevel[] speedLevels;
+        public StatusLevelUp[] speedLevels;
     
     }
 }

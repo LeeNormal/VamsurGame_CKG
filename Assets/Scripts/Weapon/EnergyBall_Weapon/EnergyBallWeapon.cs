@@ -34,7 +34,7 @@ public class EnergyBallWeapon : WeaponBase
 
     private GameObject[] FindNearestEnemies(int count)
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemys");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] selected = new GameObject[count];
         float[] minDists = new float[count];
         for (int i = 0; i < count; i++) minDists[i] = Mathf.Infinity;

@@ -30,7 +30,7 @@ public class EnemyPoolManager : MonoBehaviour
             //Destroy말고 e.gameObject.SetActive(false)로 해보면 하이어라키창에 계속 생겨 메모리 낭비가 있음
             actionOnDestroy: e => Destroy(e.gameObject),
             defaultCapacity: 3,
-            maxSize: 5
+            maxSize: 100
         );
         
         _tankPool = new ObjectPool<Enemy>(
@@ -44,7 +44,7 @@ public class EnemyPoolManager : MonoBehaviour
             actionOnRelease: e => e.gameObject.SetActive(false),
             actionOnDestroy: e => Destroy(e.gameObject),
             defaultCapacity: 3,
-            maxSize: 5
+            maxSize: 100
         );
     }
     

@@ -43,7 +43,7 @@ namespace Enemys.EnemyScript
             }
             FlipByScale(transform.position.x > _player.position.x);
             Die();
-            EnemySpeedUp();
+            EnemyStateUp();
             PlayerRunAfter();
             
         }
@@ -54,8 +54,8 @@ namespace Enemys.EnemyScript
             if (!(_curHp <= 0)) return;
             _isDead = true;
             Instantiate(expOrbPrefab, transform.position, Quaternion.identity);
-            gameObject.SetActive(false);
-            //Destroy(gameObject);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
         }
         
         // 플레이어를 향해 추적 이동
@@ -75,7 +75,7 @@ namespace Enemys.EnemyScript
         }
         
         // 게임 시간에 따라 속도 증가
-        private void EnemySpeedUp()
+        private void EnemyStateUp()
         {
             var time = (int)Time.time;
             foreach (var level in enemyData.speedLevels)
@@ -83,9 +83,12 @@ namespace Enemys.EnemyScript
                 if (time >= level.time)
                 {
                     _speed = level.speed;
+                    _curHp = level.hp;
                 }
             }
         }
+        
+        
         
         // 다른 스크립트에서(무기) 이 함수를 호출해서 적에게 데미지를 주는 함수
         public void TakeDamage(float damage)
