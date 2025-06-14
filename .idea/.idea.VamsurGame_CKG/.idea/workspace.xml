@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2d0a7d1-23db-4247-b13b-cb7edc5413f6" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/NormalEnemyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/NormalEnemyData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/TankEnemyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/TankEnemyData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VamsurGame_CKG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VamsurGame_CKG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyPoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyPoolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NotoSansKR-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NotoSansKR-VariableFont_wght SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +109,10 @@
       <updated>1749191433442</updated>
       <workItem from="1749191434849" duration="1818000" />
       <workItem from="1749370695217" duration="2138000" />
+      <workItem from="1749886874003" duration="2801000" />
+      <workItem from="1749911836789" duration="1626000" />
+      <workItem from="1749921035289" duration="651000" />
+      <workItem from="1749921701203" duration="4447000" />
     </task>
     <servers />
   </component>
@@ -118,6 +126,17 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

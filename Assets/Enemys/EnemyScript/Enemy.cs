@@ -11,6 +11,7 @@ namespace Enemys.EnemyScript
     
         public float _curHp;                    // 현재 체력
         private float _speed;                   // 현재 이동 속도
+        private float _EnemyDamage;             // 적 공격력
         private Transform _player;              // 플레이어 위치 참조
         private SpriteRenderer _sprite;         // 스프라이트
         private bool _isDead;                   // 죽는 여부
@@ -32,6 +33,7 @@ namespace Enemys.EnemyScript
 
             _curHp = enemyData.maxHp;
             _speed = enemyData.baseSpeed;
+            _EnemyDamage = enemyData.baseDamage;
         }
 
         private void Update()
@@ -74,7 +76,7 @@ namespace Enemys.EnemyScript
             transform.localScale = scale;
         }
         
-        // 게임 시간에 따라 속도 증가
+        // 게임 시간에 따라 스탯 증가
         private void EnemyStateUp()
         {
             var time = (int)Time.time;

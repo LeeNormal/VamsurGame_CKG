@@ -8,6 +8,7 @@ namespace Enemys.EnemyScript
         public string enemyName;
         public float maxHp;
         public float baseSpeed;
+        public float baseDamage;
 
         [System.Serializable]
         public struct StatusLevelUp
@@ -15,6 +16,7 @@ namespace Enemys.EnemyScript
             public int time;
             public float speed;
             public int hp;
+            public int damage;
         }
 
         public StatusLevelUp[] speedLevels;

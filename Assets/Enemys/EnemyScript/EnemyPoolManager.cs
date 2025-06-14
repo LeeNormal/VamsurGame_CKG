@@ -1,18 +1,23 @@
+using System;
 using UnityEngine;
 using UnityEngine.Pool;
 using System.Collections.Generic;
 using Enemys.EnemyScript;
+using Random = UnityEngine.Random;
 
 public class EnemyPoolManager : MonoBehaviour
 {
     public GameObject normalEnemyPrefab;
     public GameObject tankEnemyPrefab;
+    public GameObject EndEnemyPrefab;
 
     private ObjectPool<Enemy> _normalPool;
     private ObjectPool<Enemy> _tankPool;
 
     public static EnemyPoolManager Instance;
 
+    private float timer = Time.deltaTime;
+    
     private void Awake()
     {
         Instance = this;
@@ -47,7 +52,7 @@ public class EnemyPoolManager : MonoBehaviour
             maxSize: 100
         );
     }
-    
+
     public Enemy GetRandomEnemy()
     {
         var roll = Random.Range(0, 2);
@@ -63,4 +68,5 @@ public class EnemyPoolManager : MonoBehaviour
     {
         _tankPool.Release(enemy);
     }
+    
 }
