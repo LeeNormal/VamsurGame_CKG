@@ -1,3 +1,4 @@
+using Enemys.EnemyScript;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -33,12 +34,12 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemys"))
+        if (other.CompareTag("Enemy"))
         {
-            EnemyStats stats = other.GetComponent<EnemyStats>();
-            if (stats != null)
+            Enemy enemys = other.GetComponent<Enemy>();
+            if (enemys != null)
             {
-                stats.TakeDamage(damage);
+                enemys.TakeDamage(damage);
             }
 
             Destroy(gameObject); // 데미지 준 후 파괴

@@ -6,7 +6,7 @@ public class OrbitSwordCollider : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemys"))
+        if (other.CompareTag("Enemy"))
         {
             EnemyStats stats = other.GetComponent<EnemyStats>();
             if (stats != null)
