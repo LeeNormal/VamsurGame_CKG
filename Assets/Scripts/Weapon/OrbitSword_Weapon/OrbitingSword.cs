@@ -6,7 +6,7 @@ public class OrbitingSword : MonoBehaviour
     private float rotateSpeed;
     private float damage;
     private float radius;
-    private float currentAngle; // 현재 각도 (도 단위)
+    private float currentAngle; 
 
     public void Initialize(Transform center, float speed, float dmg, float r, float initialAngle)
     {

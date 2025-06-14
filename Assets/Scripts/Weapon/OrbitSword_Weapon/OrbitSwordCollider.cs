@@ -1,3 +1,4 @@
+using Enemys.EnemyScript;
 using UnityEngine;
 
 public class OrbitSwordCollider : MonoBehaviour
@@ -8,10 +9,10 @@ public class OrbitSwordCollider : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            EnemyStats stats = other.GetComponent<EnemyStats>();
-            if (stats != null)
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy)
             {
-                stats.TakeDamage(damage);
+                enemy.TakeDamage(damage);
             }
         }
     }

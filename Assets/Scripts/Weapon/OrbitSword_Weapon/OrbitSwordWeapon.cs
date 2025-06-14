@@ -8,8 +8,9 @@ public class OrbitSwordWeapon : WeaponBase
     [SerializeField] private float rotateSpeed = 90f;
     [SerializeField] private float radius = 2f;
 
-    private List<GameObject> swords = new List<GameObject>();
+    private List<GameObject> swords = new();
     private int swordCount = 1;
+    private int countUpgradeLevel = 0;
 
     public override void Initialize()
     {
@@ -17,7 +18,7 @@ public class OrbitSwordWeapon : WeaponBase
         UpdateSwords();
     }
 
-    public override void Attack() { /* Sword가 자체적으로 회전하므로 생략 */ }
+    public override void Attack() { /* 회전형 무기라 Attack 생략 가능 */ }
 
     private void UpdateSwords()
     {
@@ -29,9 +30,10 @@ public class OrbitSwordWeapon : WeaponBase
 
         for (int i = 0; i < swordCount; i++)
         {
-            float angle = 360f * i / swordCount; // 시작 위치만 다르게, 도는 방향은 동일
+            float angle = 360f * i / swordCount;
             GameObject sword = Instantiate(swordPrefab, transform.position, Quaternion.identity);
             sword.transform.SetParent(null);
+
             OrbitingSword swordScript = sword.GetComponent<OrbitingSword>();
             swordScript.Initialize(transform, rotateSpeed, damage, radius, angle);
             swords.Add(sword);
@@ -42,29 +44,33 @@ public class OrbitSwordWeapon : WeaponBase
     {
         damage += 10f;
         level++;
+
         foreach (var sword in swords)
-        {
             sword.GetComponent<OrbitingSword>().SetDamage(damage);
-        }
-        Debug.Log($"{weaponName} 데미지 업! 현재: {damage}");
     }
 
     public override void UpgradeSpeed()
     {
         rotateSpeed += 30f;
         level++;
+
         foreach (var sword in swords)
-        {
             sword.GetComponent<OrbitingSword>().SetSpeed(rotateSpeed);
-        }
-        Debug.Log($"{weaponName} 속도 업! 현재: {rotateSpeed}");
     }
 
-    public void UpgradeCount()
+    public override void UpgradeCount()
     {
+        if (!CanUpgradeCount()) return;
+
         swordCount++;
+        countUpgradeLevel++;
         level++;
+
         UpdateSwords();
-        Debug.Log($"{weaponName} 개수 업! 현재: {swordCount}개");
+    }
+
+    public override bool CanUpgradeCount()
+    {
+        return countUpgradeLevel < 4;
     }
 }

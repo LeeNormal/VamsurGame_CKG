@@ -36,10 +36,10 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Enemy enemys = other.GetComponent<Enemy>();
-            if (enemys != null)
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy)
             {
-                enemys.TakeDamage(damage);
+                enemy.TakeDamage(damage);
             }
 
             Destroy(gameObject); // 데미지 준 후 파괴
