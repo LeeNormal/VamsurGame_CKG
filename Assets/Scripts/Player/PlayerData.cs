@@ -8,6 +8,8 @@ public class PlayerData : MonoBehaviour
     
     public PlayerHealthBar healthBar;
 
+    public GameOverUI gameOverUI;               // 추가 됨
+    
     public event Action<float> OnHpChanged;
 
     private bool isDead = false;
@@ -63,7 +65,7 @@ public class PlayerData : MonoBehaviour
         var animator = GetComponentInChildren<Animator>();
         if (animator != null)
             animator.enabled = false;
-
+        gameOverUI.ShowGameOver();
     }
 
     public void Heal(float amount)
