@@ -14,7 +14,7 @@ public class OrbitSwordWeapon : WeaponBase
 
     public override void Initialize()
     {
-        weaponName = "OrbitSword";
+        weaponName = "회전하는 칼";
         UpdateSwords();
     }
 
@@ -22,6 +22,7 @@ public class OrbitSwordWeapon : WeaponBase
 
     private void UpdateSwords()
     {
+        // 기존 칼 제거
         foreach (var sword in swords)
         {
             if (sword != null) Destroy(sword);
@@ -32,10 +33,11 @@ public class OrbitSwordWeapon : WeaponBase
         {
             float angle = 360f * i / swordCount;
             GameObject sword = Instantiate(swordPrefab, transform.position, Quaternion.identity);
-            sword.transform.SetParent(null);
+
+            sword.transform.SetParent(this.transform);
 
             OrbitingSword swordScript = sword.GetComponent<OrbitingSword>();
-            swordScript.Initialize(transform, rotateSpeed, damage, radius, angle);
+            swordScript.Initialize(rotateSpeed, damage, radius, angle);
             swords.Add(sword);
         }
     }

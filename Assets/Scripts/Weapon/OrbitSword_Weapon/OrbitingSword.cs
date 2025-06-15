@@ -8,9 +8,9 @@ public class OrbitingSword : MonoBehaviour
     private float radius;
     private float currentAngle; 
 
-    public void Initialize(Transform center, float speed, float dmg, float r, float initialAngle)
+    public void Initialize(float speed, float dmg, float r, float initialAngle)
     {
-        target = center;
+        target = transform.parent;
         rotateSpeed = speed;
         damage = dmg;
         radius = r;

@@ -21,7 +21,7 @@ public class EnemyPoolManager : MonoBehaviour
             createFunc: () =>
             {
                 var go = Instantiate(normalEnemyPrefab);
-                var e = go.GetComponent<Enemy>();
+                var e = go.GetComponentInChildren<Enemy>();
                 e.Init(ReturnNormalEnemy);
                 return e;
             },
@@ -36,7 +36,7 @@ public class EnemyPoolManager : MonoBehaviour
         _tankPool = new ObjectPool<Enemy>(
             createFunc: () => {
                 var go = Instantiate(tankEnemyPrefab);
-                var e = go.GetComponent<Enemy>();
+                var e = go.GetComponentInChildren<Enemy>();
                 e.Init(ReturnTankEnemy);
                 return e;
             },

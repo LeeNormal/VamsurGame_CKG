@@ -52,73 +52,65 @@ public class LevelUpUIManager : MonoBehaviour
             return;
         }
 
-        if (weaponManager.CanAddWeapon() && weaponManager.HasAvailableWeapons())
+        option1 = GenerateRandomOption(weaponManager);
+        option2 = GenerateRandomOption(weaponManager, option1); // 중복 피하기 위한 비교 포함
+
+        SetupOptionUI(optionButton1, optionText1, option1);
+        SetupOptionUI(optionButton2, optionText2, option2);
+
+        ResetButtonPositions();
+    }
+
+    private LevelUpOption GenerateRandomOption(WeaponManager weaponManager, LevelUpOption avoidDuplicate = null)
+    {
+        bool canAdd = weaponManager.CanAddWeapon();
+        bool hasAvailable = weaponManager.HasAvailableWeapons();
+        bool tryNewWeapon = canAdd && hasAvailable && Random.value < 0.5f; // 50% 확률로 무기 or 업그레이드
+
+        if (tryNewWeapon)
         {
-            GameObject weaponPrefabA = weaponManager.GetRandomAvailableWeapon();
-            GameObject weaponPrefabB = null;
-
-            bool onlyOneChoice = !weaponManager.HasAvailableWeapons();
-
-            if (!onlyOneChoice)
-                weaponPrefabB = weaponManager.GetRandomAvailableWeapon();
-
-            option1 = new LevelUpOption(weaponPrefabA);
-            optionText1.text = $"새 무기: {weaponPrefabA.name}";
-            optionButton1.onClick.RemoveAllListeners();
-            optionButton1.onClick.AddListener(() => ChooseNewWeapon(option1));
-            optionButton1.gameObject.SetActive(true);
-
-            if (!onlyOneChoice && weaponPrefabB != null)
-            {
-                option2 = new LevelUpOption(weaponPrefabB);
-                optionText2.text = $"새 무기: {weaponPrefabB.name}";
-                optionButton2.onClick.RemoveAllListeners();
-                optionButton2.onClick.AddListener(() => ChooseNewWeapon(option2));
-                optionButton2.gameObject.SetActive(true);
-                ResetButtonPositions();
-            }
-            else
-            {
-                optionButton2.gameObject.SetActive(false);
-                CenterButton(optionButton1);
-            }
+            GameObject prefab = weaponManager.GetRandomAvailableWeapon();
+            if (avoidDuplicate != null && avoidDuplicate.weaponPrefab == prefab)
+                prefab = weaponManager.GetRandomAvailableWeapon(); // 중복 피하기
+            return new LevelUpOption(prefab);
         }
         else
         {
-            List<WeaponBase> weaponList = weaponManager.equippedWeapons;
-            if (weaponList.Count == 0)
+            List<WeaponBase> equipped = weaponManager.equippedWeapons;
+            if (equipped.Count == 0)
             {
-                Debug.LogWarning("장착한 무기가 없습니다!");
-                return;
+                // fallback: 무조건 무기 추가
+                GameObject fallbackWeapon = weaponManager.GetRandomAvailableWeapon();
+                return new LevelUpOption(fallbackWeapon);
             }
 
-            WeaponBase weaponA = weaponList[Random.Range(0, weaponList.Count)];
-            UpgradeType upgradeA = GetRandomUpgradeType(weaponA);
-            option1 = new LevelUpOption(weaponA, upgradeA);
+            WeaponBase weapon = equipped[Random.Range(0, equipped.Count)];
+            UpgradeType upgrade = GetRandomUpgradeType(weapon);
 
-            WeaponBase weaponB;
-            UpgradeType upgradeB;
-            int tryCount = 0;
-            do
+            if (avoidDuplicate != null && avoidDuplicate.weapon == weapon && avoidDuplicate.upgradeType == upgrade)
             {
-                weaponB = weaponList[Random.Range(0, weaponList.Count)];
-                upgradeB = GetRandomUpgradeType(weaponB);
-                tryCount++;
-            } while (weaponB == weaponA && upgradeB == upgradeA && tryCount < 30);
+                weapon = equipped[Random.Range(0, equipped.Count)];
+                upgrade = GetRandomUpgradeType(weapon);
+            }
 
-            option2 = new LevelUpOption(weaponB, upgradeB);
+            return new LevelUpOption(weapon, upgrade);
+        }
+    }
 
-            optionText1.text = GetUpgradeText(weaponA, upgradeA);
-            optionText2.text = GetUpgradeText(weaponB, upgradeB);
+    private void SetupOptionUI(Button button, TMP_Text text, LevelUpOption option)
+    {
+        button.onClick.RemoveAllListeners();
+        button.gameObject.SetActive(true);
 
-            optionButton1.onClick.RemoveAllListeners();
-            optionButton1.onClick.AddListener(() => ChooseUpgrade(option1));
-            optionButton2.onClick.RemoveAllListeners();
-            optionButton2.onClick.AddListener(() => ChooseUpgrade(option2));
-
-            optionButton1.gameObject.SetActive(true);
-            optionButton2.gameObject.SetActive(true);
-            ResetButtonPositions();
+        if (option.isNewWeapon)
+        {
+            text.text = $"새 무기: {option.weaponPrefab.name}";
+            button.onClick.AddListener(() => ChooseNewWeapon(option));
+        }
+        else
+        {
+            text.text = option.weapon.GetUpgradeText(option.upgradeType);
+            button.onClick.AddListener(() => ChooseUpgrade(option));
         }
     }
 
@@ -148,10 +140,7 @@ public class LevelUpUIManager : MonoBehaviour
                 weapon.UpgradeSpeed();
                 break;
             case UpgradeType.Count:
-                if (weapon is OrbitSwordWeapon orbitSword)
-                    orbitSword.UpgradeCount();
-                else if (weapon is EnergyBallWeapon energyBall)
-                    energyBall.UpgradeProjectileCount();
+                weapon.UpgradeCount();
                 break;
         }
 
@@ -172,17 +161,6 @@ public class LevelUpUIManager : MonoBehaviour
             return UpgradeType.Damage;
 
         return validTypes[Random.Range(0, validTypes.Count)];
-    }
-
-    private string GetUpgradeText(WeaponBase weapon, UpgradeType type)
-    {
-        return type switch
-        {
-            UpgradeType.Damage => $"{weapon.weaponName} 데미지 업",
-            UpgradeType.Speed => $"{weapon.weaponName} 속도 업",
-            UpgradeType.Count => $"{weapon.weaponName} 개수 업",
-            _ => "???"
-        };
     }
 
     private void CenterButton(Button button)

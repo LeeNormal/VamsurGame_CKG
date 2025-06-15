@@ -1,35 +1,35 @@
 using Enemys.EnemyScript;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     public float speed = 10f;
-    [DoNotSerialize]
     public float damage = 0f;
-    private Transform target;
 
-    public void SetTarget(Transform t)
+    private Vector3 moveDirection;
+    private bool initialized = false;
+
+    public void SetDirection(Vector3 direction)
     {
-        target = t;
+        moveDirection = direction.normalized;
+        initialized = true;
+
+        float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
     }
 
     void Update()
     {
-        if (target == null)
+        if (!initialized) return;
+
+        transform.position += moveDirection * speed * Time.deltaTime;
+
+        // 화면 밖이면 삭제
+        Vector3 screenPos = Camera.main.WorldToViewportPoint(transform.position);
+        if (screenPos.x < -0.1f || screenPos.x > 1.1f || screenPos.y < -0.1f || screenPos.y > 1.1f)
         {
             Destroy(gameObject);
-            return;
         }
-
-        // 방향 벡터 계산
-        Vector3 direction = (target.position - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90f); // ← 여기서 -90 보정!
-
-
-        // 이동 처리
-        transform.position += direction * speed * Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -37,13 +37,12 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy)
+            if (enemy != null)
             {
                 enemy.TakeDamage(damage);
             }
 
-            Destroy(gameObject); // 데미지 준 후 파괴
+            Destroy(gameObject); // 적에게 맞으면 소멸
         }
     }
-
 }
