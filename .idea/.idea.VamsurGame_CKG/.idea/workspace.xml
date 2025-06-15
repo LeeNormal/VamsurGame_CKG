@@ -6,22 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d2d0a7d1-23db-4247-b13b-cb7edc5413f6" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VamsurGame_CKG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VamsurGame_CKG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyPrefab/End_Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyPrefab/End_Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyPrefab/Nomal_Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyPrefab/Nomal_Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyPrefab/Tank_Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyPrefab/Tank_Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EndEnemy.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EndEnemy.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyPoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyPoolManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemySpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/NormalEnemyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/NormalEnemyData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/TankEnemyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/TankEnemyData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NotoSansKR-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NotoSansKR-VariableFont_wght SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHitHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHitHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemyHpBarBackGroundTexture.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/enemyHpBarBackGroundTexture.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/enemyHpBarTexture.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/enemyHpBarTexture.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,21 +32,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Unity 에디터에 연결.Unity 에디터에 연결.executor": "Debug",
-    "git-widget-placeholder": "last__Hojin",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Unity 에디터에 연결.Unity 에디터에 연결.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;last__Hojin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.41f1\Editor\Unity.exe" />
@@ -85,15 +70,13 @@
       <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
-    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="37688">
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="37688" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -130,6 +113,7 @@
       <workItem from="1749921035289" duration="651000" />
       <workItem from="1749921701203" duration="4447000" />
       <workItem from="1749970405522" duration="5578000" />
+      <workItem from="1749979065352" duration="1192000" />
     </task>
     <servers />
   </component>
