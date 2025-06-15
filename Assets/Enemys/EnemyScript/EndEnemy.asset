@@ -10,22 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 188f3ec218e5b2346bf9e21e622b273e, type: 3}
-  m_Name: NormalEnemyData
+  m_Name: EndEnemy
   m_EditorClassIdentifier: 
-  enemyName: Nomal_Enemy
-  maxHp: 100
-  baseSpeed: 1
-  baseDamage: 10
+  enemyName: End_Enemy
+  maxHp: 1000
+  baseSpeed: 6
+  baseDamage: 1000
   speedLevels:
-  - time: 60
-    speed: 2
-    hp: 140
-    damage: 12
-  - time: 120
-    speed: 3
-    hp: 180
-    damage: 15
-  - time: 180
-    speed: 4
-    hp: 220
-    damage: 18
+  - time: 1200
+    speed: 10
+    hp: 1000
+    damage: 1000
