@@ -545,6 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalEnemyPrefab: {fileID: 3916679565556358711, guid: 5433a48d0c32b634dbfe3509f372c554, type: 3}
   tankEnemyPrefab: {fileID: 5742122366338108821, guid: 285fbf07025ea6448a8cf1e97a45d58e, type: 3}
+  EndEnemyPrefab: {fileID: 8638299194797640441, guid: 3879594d39e752d409faffc74507ec4f, type: 3}
 --- !u!4 &681414790
 Transform:
   m_ObjectHideFlags: 0
@@ -1042,6 +1043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1132090840}
+  EndPrefab: {fileID: 0}
 --- !u!1 &1232993134
 GameObject:
   m_ObjectHideFlags: 0

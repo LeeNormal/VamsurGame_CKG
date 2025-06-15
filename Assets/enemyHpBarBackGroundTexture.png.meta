@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      enemyHpBarBackGroundTexture_0: -2366243780773429700
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
