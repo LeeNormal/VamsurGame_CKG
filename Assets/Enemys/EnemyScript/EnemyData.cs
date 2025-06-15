@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 namespace Enemys.EnemyScript
@@ -9,6 +10,8 @@ namespace Enemys.EnemyScript
         public float maxHp;
         public float baseSpeed;
         public float baseDamage;
+
+        public bool faceLeftByDefault = true;
 
         [System.Serializable]
         public struct StatusLevelUp

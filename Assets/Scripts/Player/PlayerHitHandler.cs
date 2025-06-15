@@ -1,11 +1,13 @@
+using Enemys.EnemyScript;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerData))]
 public class PlayerHitHandler : MonoBehaviour
 {
-    public float damage = 10f;                 // ´ê¾ÒÀ» ¶§ ÀÔ´Â ÇÇÇØ·®
-    public float invincibleDuration = 0.5f;    // ¹«Àû ½Ã°£
+    //public float damage = 10f;                 // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô´ï¿½ ï¿½ï¿½ï¿½Ø·ï¿½
+    public float invincibleDuration = 0.5f;    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
+    private Enemy enemy;
     private PlayerData playerData;
     private bool isInvincible = false;
 
@@ -19,7 +21,7 @@ public class PlayerHitHandler : MonoBehaviour
         if (!other.CompareTag("Enemy")) return;
         if (isInvincible || playerData.IsDead()) return;
 
-        playerData.TakeDamage(damage);
+        playerData.TakeDamage(enemy._damage);
 
         if (!playerData.IsDead())
         {

@@ -104,14 +104,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5742122366338108821}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 6.72, y: 1.34, z: 0.042930588}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5949196474669424179}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &8370456269073934997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -204,6 +204,7 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 79f861b77ead9144b9e6d4703642e969, type: 2}
   expOrbPrefab: {fileID: 3239885756700334459, guid: a1ec880225893b1419f321e74f16adff, type: 3}
   _curHp: 0
+  _damage: 0
   healthBar: {fileID: 3385620854870026277}
 --- !u!70 &8612849009826264946
 CapsuleCollider2D:

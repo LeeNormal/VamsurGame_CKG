@@ -3,11 +3,11 @@ using System;
 
 public class PlayerData : MonoBehaviour
 {
-    [Header("Ã¼·Â ¼³Á¤")]
+    [Header("Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public float maxHp = 100f;
     public float currentHp;
 
-    [Header("UI ¿¬°á")]
+    [Header("UI ï¿½ï¿½ï¿½ï¿½")]
     public PlayerHealthBar healthBar;
 
     public event Action<float> OnHpChanged;
@@ -48,12 +48,12 @@ public class PlayerData : MonoBehaviour
     {
         isDead = true;
 
-        // ÀÔ·Â ¸·±â
+        // ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
         var controller = GetComponent<PlayerController>();
         if (controller != null)
             controller.enabled = false;
 
-        // ¹«±â Á¦°Å
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Transform weaponManager = transform.Find("WeaponManager");
         if (weaponManager != null)
         {
@@ -68,7 +68,7 @@ public class PlayerData : MonoBehaviour
         if (animator != null)
             animator.enabled = false;
 
-        Debug.Log("ÇÃ·¹ÀÌ¾î°¡ »ç¸Á »óÅÂ·Î ÀüÈ¯µÇ¾ú½À´Ï´Ù.");
+        Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½È¯ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
     }
 
     public void Heal(float amount)

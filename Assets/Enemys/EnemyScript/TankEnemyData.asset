@@ -17,15 +17,15 @@ MonoBehaviour:
   baseSpeed: 1
   baseDamage: 11
   speedLevels:
-  - time: 60
+  - time: 90
     speed: 1
     hp: 150
     damage: 15
-  - time: 120
+  - time: 180
     speed: 2
     hp: 200
     damage: 18
-  - time: 180
+  - time: 240
     speed: 3
     hp: 350
     damage: 20

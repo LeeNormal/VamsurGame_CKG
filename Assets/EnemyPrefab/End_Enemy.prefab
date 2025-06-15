@@ -201,3 +201,5 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 619a7b38fdaa8ac4d9b17dd941d89234, type: 2}
   expOrbPrefab: {fileID: 3239885756700334459, guid: a1ec880225893b1419f321e74f16adff, type: 3}
   _curHp: 0
+  _damage: 0
+  healthBar: {fileID: 0}
