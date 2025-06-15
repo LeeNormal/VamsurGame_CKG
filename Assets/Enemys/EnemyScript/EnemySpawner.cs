@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
         var enemy = EnemyPoolManager.Instance.GetRandomEnemy();
         enemy.transform.position = pos;
         
-        if (!endSpawned && endtimer >= 10f)
+        if (!endSpawned && endtimer >= 300f)
         {
             Vector3 randomPos = player.position + (Vector3)(Random.insideUnitCircle.normalized * 10f);
             

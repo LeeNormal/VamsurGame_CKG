@@ -12,6 +12,7 @@ namespace Enemys.EnemyScript
 
         [Header("체력 관련")]
         public float _curHp;                    // 현재 체력
+        public float _damage;                  // 공격력
         private float _speed;                   // 이동 속도
         private bool _isDead;                   // 사망 여부
         public EnemyHealthBar healthBar;        // 이미 계층에 있는 체력바 오브젝트 연결 (drag & drop)
@@ -37,6 +38,7 @@ namespace Enemys.EnemyScript
 
             _curHp = enemyData.maxHp;
             _speed = enemyData.baseSpeed;
+            _damage = enemyData.baseDamage;
 
             // 체력바가 연결되어 있다면 초기화
             if (healthBar != null)
@@ -54,7 +56,7 @@ namespace Enemys.EnemyScript
                 _onReturn?.Invoke(this);
             }
 
-            FlipByScale(transform.position.x > _player.position.x);
+            FlipByScale(transform.position.x < _player.position.x);
             Die();
             EnemyStateUp();
             PlayerRunAfter();
@@ -81,8 +83,9 @@ namespace Enemys.EnemyScript
         // 플레이어 방향에 따라 스프라이트 반전
         private void FlipByScale(bool faceLeft)
         {
-            if (_sprite != null)
-                _sprite.flipX = faceLeft;
+            if (_sprite == null || enemyData == null) return;
+            bool shouldFlip = enemyData.faceLeftByDefault ? faceLeft : !faceLeft;
+            _sprite.flipX = shouldFlip;
         }
 
         // 경과 시간에 따라 체력 및 속도 조정
@@ -95,6 +98,7 @@ namespace Enemys.EnemyScript
                 {
                     _speed = level.speed;
                     _curHp = level.hp;
+                    _damage = level.damage;
                 }
             }
         }
@@ -107,6 +111,18 @@ namespace Enemys.EnemyScript
 
             if (healthBar != null)
                 healthBar.UpdateBar(_curHp / enemyData.maxHp);
+        }
+        
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                PlayerData playerdata = other.GetComponent<PlayerData>();
+                if (playerdata != null)
+                {
+                    playerdata.TakeDamage(_damage);
+                }
+            }
         }
     }
 }

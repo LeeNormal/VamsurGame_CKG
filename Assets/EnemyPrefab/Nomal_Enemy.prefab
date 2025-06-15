@@ -158,7 +158,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3c0027c84b538f746957031dd45b4da3, type: 3}
   m_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.36, y: 0.39}
@@ -204,6 +204,7 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 576ad6be5d398884faa43aaf8e5dd88a, type: 2}
   expOrbPrefab: {fileID: 3239885756700334459, guid: a1ec880225893b1419f321e74f16adff, type: 3}
   _curHp: 0
+  _damage: 0
   healthBar: {fileID: 1376974184612264548}
 --- !u!70 &1647159421546847099
 CapsuleCollider2D:

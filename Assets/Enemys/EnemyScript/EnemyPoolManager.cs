@@ -9,14 +9,11 @@ public class EnemyPoolManager : MonoBehaviour
 {
     public GameObject normalEnemyPrefab;
     public GameObject tankEnemyPrefab;
-    public GameObject EndEnemyPrefab;
 
     private ObjectPool<Enemy> _normalPool;
     private ObjectPool<Enemy> _tankPool;
 
     public static EnemyPoolManager Instance;
-
-    private float timer = Time.deltaTime;
     
     private void Awake()
     {
