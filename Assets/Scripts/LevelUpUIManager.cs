@@ -104,7 +104,7 @@ public class LevelUpUIManager : MonoBehaviour
 
         if (option.isNewWeapon)
         {
-            text.text = $"새 무기: {option.weaponPrefab.name}";
+            text.text = $"새 무기: {option.weaponDisplayName}";
             button.onClick.AddListener(() => ChooseNewWeapon(option));
         }
         else
@@ -113,6 +113,7 @@ public class LevelUpUIManager : MonoBehaviour
             button.onClick.AddListener(() => ChooseUpgrade(option));
         }
     }
+
 
     private void ChooseNewWeapon(LevelUpOption selectedOption)
     {
@@ -163,17 +164,11 @@ public class LevelUpUIManager : MonoBehaviour
         return validTypes[Random.Range(0, validTypes.Count)];
     }
 
-    private void CenterButton(Button button)
-    {
-        RectTransform rect = button.GetComponent<RectTransform>();
-        rect.anchoredPosition = Vector2.zero;
-    }
-
     private void ResetButtonPositions()
     {
         RectTransform rect1 = optionButton1.GetComponent<RectTransform>();
         RectTransform rect2 = optionButton2.GetComponent<RectTransform>();
-        rect1.anchoredPosition = new Vector2(-200, 0);
-        rect2.anchoredPosition = new Vector2(200, 0);
+        rect1.anchoredPosition = new Vector2(0, 200);
+        rect2.anchoredPosition = new Vector2(0, -200);
     }
 }

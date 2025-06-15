@@ -3,8 +3,9 @@ using UnityEngine.UI; // 경험치 UI를 위한 Image 사용
 
 public class PlayerExpManager : MonoBehaviour
 {
+    public int currentLevel = 1; // 시작 레벨
     public int currentExp = 0;        // 현재 누적 경험치
-    public int maxExp = 100;           // 레벨업에 필요한 최대 경험치
+    public int maxExp = 40;           // 레벨업에 필요한 최대 경험치
     public Image expFillImage;         // 경험치 바 UI 이미지
     private float displayedExpRatio = 0f; // 부드럽게 표현할 현재 경험치 비율
 
@@ -36,7 +37,7 @@ public class PlayerExpManager : MonoBehaviour
 
         // 현재 경험치가 최대치 이상이면 레벨업 처리
         if (currentExp >= maxExp)
-        {
+        {   
             currentExp = maxExp; // 일단 최대치를 넘지 않게 고정
             LevelUp();
         }
@@ -58,11 +59,16 @@ public class PlayerExpManager : MonoBehaviour
     {
         Debug.Log("레벨업!");
 
-        currentExp = 0; // 경험치 초기화 (다음 레벨업을 위해)
+        currentExp = 0;
+        currentLevel++;
 
-        UpdateExpUI();  // 경험치 바도 즉시 0%로 초기화
+        // 다음 레벨업까지 필요한 경험치 증가 공식
+        maxExp = Mathf.FloorToInt(40 + 25f * Mathf.Pow(currentLevel - 1, 1.5f));
+        Debug.Log("MaxExp : " + maxExp);
 
-        // 레벨업 UI 오픈 (레벨업 시 선택지 제공)
+        UpdateExpUI();
+
+        // 레벨업 UI 오픈
         FindObjectOfType<LevelUpUIManager>().OpenLevelUpUI();
     }
 }

@@ -3,11 +3,9 @@ using System;
 
 public class PlayerData : MonoBehaviour
 {
-    [Header("ü�� ����")]
     public float maxHp = 100f;
     public float currentHp;
-
-    [Header("UI ����")]
+    
     public PlayerHealthBar healthBar;
 
     public event Action<float> OnHpChanged;
@@ -48,12 +46,10 @@ public class PlayerData : MonoBehaviour
     {
         isDead = true;
 
-        // �Է� ����
         var controller = GetComponent<PlayerController>();
         if (controller != null)
             controller.enabled = false;
 
-        // ���� ����
         Transform weaponManager = transform.Find("WeaponManager");
         if (weaponManager != null)
         {
@@ -68,7 +64,6 @@ public class PlayerData : MonoBehaviour
         if (animator != null)
             animator.enabled = false;
 
-        Debug.Log("�÷��̾ ��� ���·� ��ȯ�Ǿ����ϴ�.");
     }
 
     public void Heal(float amount)

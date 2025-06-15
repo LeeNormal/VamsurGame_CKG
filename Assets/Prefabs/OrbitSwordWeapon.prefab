@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fef9855d99781448aaedcad5a5e8fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: 
+  weaponName: "\uD68C\uC804\uD558\uB294 \uCE7C"
   level: 1
-  damage: 50
+  damage: 30
   attackInterval: 1
   swordPrefab: {fileID: 6930187637225388656, guid: a6a192d6df8f25545b54891f16d88e25, type: 3}
   rotateSpeed: 90

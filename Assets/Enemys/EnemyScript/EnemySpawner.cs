@@ -35,20 +35,26 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        var dir = Random.insideUnitCircle.normalized;
-        var pos = player.position + new Vector3(dir.x * 10, dir.y * 5, 0);
+        int spawnCount = 3;
 
-        var enemy = EnemyPoolManager.Instance.GetRandomEnemy();
-        enemy.transform.position = pos;
-        
+        for (int i = 0; i < spawnCount; i++)
+        {
+            var dir = Random.insideUnitCircle.normalized;
+            var pos = player.position + new Vector3(dir.x * 10, dir.y * 5, 0);
+
+            var enemy = EnemyPoolManager.Instance.GetRandomEnemy();
+            enemy.transform.position = pos;
+            enemy.gameObject.SetActive(true); // 풀 사용 시 필요
+        }
+
         if (!endSpawned && endtimer >= 300f)
         {
             Vector3 randomPos = player.position + (Vector3)(Random.insideUnitCircle.normalized * 10f);
-            
             Instantiate(EndPrefab, randomPos, Quaternion.identity);
             endSpawned = true;
         }
     }
+
     private void SpawnCircleEnemies(int count, float radius)
     {
         Vector3 playerPos = player.position;

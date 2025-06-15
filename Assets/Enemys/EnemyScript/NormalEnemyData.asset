@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: NormalEnemyData
   m_EditorClassIdentifier: 
   enemyName: Nomal_Enemy
-  maxHp: 100
+  maxHp: 80
   baseSpeed: 2
-  baseDamage: 10
+  baseDamage: 12
+  expValue: 8
   faceLeftByDefault: 1
   speedLevels:
+  - time: 30
+    hp: 100
+  - time: 60
+    hp: 120
   - time: 90
-    speed: 3
     hp: 140
-    damage: 12
-  - time: 180
-    speed: 4
+  - time: 120
+    hp: 160
+  - time: 150
     hp: 180
-    damage: 15
+  - time: 180
+    hp: 200
+  - time: 180
+    hp: 200
   - time: 240
-    speed: 5
-    hp: 220
-    damage: 18
+    hp: 240
+  - time: 270
+    hp: 260

@@ -15,17 +15,25 @@ MonoBehaviour:
   enemyName: Tank_Enemy
   maxHp: 150
   baseSpeed: 1
-  baseDamage: 11
+  baseDamage: 15
+  expValue: 13
+  faceLeftByDefault: 1
   speedLevels:
+  - time: 30
+    hp: 180
+  - time: 60
+    hp: 210
   - time: 90
-    speed: 1
-    hp: 150
-    damage: 15
+    hp: 240
+  - time: 120
+    hp: 270
+  - time: 150
+    hp: 300
   - time: 180
-    speed: 2
-    hp: 200
-    damage: 18
+    hp: 330
+  - time: 210
+    hp: 360
   - time: 240
-    speed: 3
-    hp: 350
-    damage: 20
+    hp: 390
+  - time: 270
+    hp: 420

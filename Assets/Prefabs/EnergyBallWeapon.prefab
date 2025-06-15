@@ -76,9 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027df15b710fd5c4fbc4831b5c06d80d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: 
+  weaponName: "\uC5D0\uB108\uC9C0 \uBCFC"
   level: 1
-  damage: 50
+  damage: 40
   attackInterval: 1
   projectilePrefab: {fileID: 8379062625038155526, guid: 6968303ab6d72584ea2d2ad125fdd360, type: 3}
   firePoint: {fileID: 3353524498369538094}

@@ -24,8 +24,6 @@ public class LingWeapon : WeaponBase
 
     private void Start()
     {
-        weaponName = "범위 링";
-
         // 초기 반지름과 스케일 기록
         if (attackRange != null)
             initialRadius = attackRange.radius;
@@ -96,7 +94,7 @@ public class LingWeapon : WeaponBase
 
     public override void UpgradeDamage()
     {
-        damage += 10f;
+        damage += 4f;
     }
 
     public override void UpgradeSpeed()
@@ -128,9 +126,9 @@ public class LingWeapon : WeaponBase
     {
         return type switch
         {
-            UpgradeType.Damage => $"{weaponName} 데미지 업",
-            UpgradeType.Speed => $"{weaponName} 딜레이 감소",
-            UpgradeType.Count => $"{weaponName} 범위 증가!",
+            UpgradeType.Damage => $"{weaponName} 데미지 업!!",
+            UpgradeType.Speed => $"{weaponName} 딜레이 감소!!",
+            UpgradeType.Count => $"{weaponName} 범위 증가!!",
             _ => "???"
         };
     }

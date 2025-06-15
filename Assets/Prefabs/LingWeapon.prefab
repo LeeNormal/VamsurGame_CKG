@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 3560608888219490978}
   - component: {fileID: 4576993119545170253}
   - component: {fileID: 8855463972635838116}
+  - component: {fileID: 4346565960469589520}
   m_Layer: 0
   m_Name: LingWeapon
   m_TagString: Weapon
@@ -134,9 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb7b0e3483f67447a6578a477d4789d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: 
+  weaponName: "\uB514\uBC84\uD504 \uD544\uB4DC"
   level: 1
-  damage: 25
+  damage: 20
   attackInterval: 1
   inside: {fileID: 3003277950967801977}
   outside: {fileID: 8358846050869522864}
@@ -179,6 +180,33 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 2.14
+--- !u!50 &4346565960469589520
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3640717316599233336}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6191477830305709044
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ namespace Enemys.EnemyScript
         public float maxHp;
         public float baseSpeed;
         public float baseDamage;
+        public int expValue = 50; // 적이 죽을 때 드랍할 경험치량
 
         public bool faceLeftByDefault = true;
 
@@ -17,9 +18,7 @@ namespace Enemys.EnemyScript
         public struct StatusLevelUp
         {
             public int time;
-            public float speed;
             public int hp;
-            public int damage;
         }
 
         public StatusLevelUp[] speedLevels;

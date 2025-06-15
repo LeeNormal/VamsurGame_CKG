@@ -6,6 +6,7 @@ public class ExpOrb : MonoBehaviour
     private PlayerExpManager playerExpManager; // 플레이어 경험치 매니저
     public float moveSpeed = 5f;
     private bool isAttracted = false;
+    public int expAmount = 50; // 기본값 (에디터 테스트용도)
 
     private void Update()
     {
@@ -26,7 +27,7 @@ public class ExpOrb : MonoBehaviour
     {
         if (other.CompareTag("Player") && playerExpManager != null)
         {
-            playerExpManager.GainExp(50);
+            playerExpManager.GainExp(expAmount);
             Destroy(gameObject);
         }
     }

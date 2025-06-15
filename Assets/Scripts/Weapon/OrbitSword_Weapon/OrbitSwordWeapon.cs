@@ -14,7 +14,6 @@ public class OrbitSwordWeapon : WeaponBase
 
     public override void Initialize()
     {
-        weaponName = "회전하는 칼";
         UpdateSwords();
     }
 
@@ -41,10 +40,20 @@ public class OrbitSwordWeapon : WeaponBase
             swords.Add(sword);
         }
     }
+    public override string GetUpgradeText(UpgradeType type)
+    {
+        return type switch
+        {
+            UpgradeType.Damage => $"{weaponName} 데미지 업!!",
+            UpgradeType.Speed => $"{weaponName} 회전 속도 증가!!",
+            UpgradeType.Count => $"{weaponName} 개수 증가!!",
+            _ => "???"
+        };
+    }
 
     public override void UpgradeDamage()
     {
-        damage += 10f;
+        damage += 5f;
         level++;
 
         foreach (var sword in swords)

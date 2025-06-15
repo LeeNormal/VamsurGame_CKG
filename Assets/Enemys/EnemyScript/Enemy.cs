@@ -58,7 +58,7 @@ namespace Enemys.EnemyScript
 
             FlipByScale(transform.position.x < _player.position.x);
             Die();
-            EnemyStateUp();
+            //EnemyStateUp();
             PlayerRunAfter();
         }
 
@@ -68,7 +68,11 @@ namespace Enemys.EnemyScript
             if (!(_curHp <= 0)) return;
 
             _isDead = true;
-            Instantiate(expOrbPrefab, transform.position, Quaternion.identity);
+            GameObject orb = Instantiate(expOrbPrefab, transform.position, Quaternion.identity);
+            if (orb.TryGetComponent(out ExpOrb expOrb))
+            {
+                expOrb.expAmount = enemyData.expValue;
+            }
             Destroy(gameObject);
         }
 
@@ -96,9 +100,7 @@ namespace Enemys.EnemyScript
             {
                 if (time >= level.time)
                 {
-                    _speed = level.speed;
                     _curHp = level.hp;
-                    _damage = level.damage;
                 }
             }
         }
@@ -112,17 +114,18 @@ namespace Enemys.EnemyScript
             if (healthBar != null)
                 healthBar.UpdateBar(_curHp / enemyData.maxHp);
         }
-        
-        void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                PlayerData playerdata = other.GetComponent<PlayerData>();
-                if (playerdata != null)
-                {
-                    playerdata.TakeDamage(_damage);
-                }
-            }
-        }
+
+
+        //void OnTriggerEnter2D(Collider2D other)
+        //{
+        //    if (other.CompareTag("Player"))
+        //    {
+        //        PlayerData playerdata = other.GetComponent<PlayerData>();
+        //        if (playerdata != null)
+        //        {
+        //            playerdata.TakeDamage(_damage);
+        //        }
+        //    }
+        //}
     }
 }

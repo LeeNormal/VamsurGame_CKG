@@ -4,10 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerData))]
 public class PlayerHitHandler : MonoBehaviour
 {
-    //public float damage = 10f;                 // ����� �� �Դ� ���ط�
-    public float invincibleDuration = 0.5f;    // ���� �ð�
+    //public float damage = 10f;                
+    public float invincibleDuration = 0.5f;  
 
-    private Enemy enemy;
     private PlayerData playerData;
     private bool isInvincible = false;
 
@@ -20,6 +19,9 @@ public class PlayerHitHandler : MonoBehaviour
     {
         if (!other.CompareTag("Enemy")) return;
         if (isInvincible || playerData.IsDead()) return;
+
+        Enemy enemy = other.GetComponent<Enemy>();
+        if (enemy == null) return;
 
         playerData.TakeDamage(enemy._damage);
 

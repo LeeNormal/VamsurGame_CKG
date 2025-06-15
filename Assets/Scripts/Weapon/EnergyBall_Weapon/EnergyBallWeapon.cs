@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class EnergyBallWeapon : WeaponBase
@@ -9,13 +9,18 @@ public class EnergyBallWeapon : WeaponBase
     private int projectileCount = 1;
     private int countUpgradeLevel = 0;
 
+    private PlayerData playerData;
+
     public override void Initialize()
     {
-        weaponName = "EnergyBall";
+        playerData = GetComponentInParent<PlayerData>();
     }
 
     public override void Attack()
     {
+        if (playerData == null || playerData.IsDead())
+            return;
+
         if (Time.time - lastAttackTime < attackInterval)
             return;
 
@@ -35,10 +40,10 @@ public class EnergyBallWeapon : WeaponBase
         {
             GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             Projectile projectile = proj.GetComponent<Projectile>();
-            projectile.SetDirection(direction); // ÃßÀû ´ë½Å ¹æÇâ¸¸ ±â¾ï
+            projectile.SetDirection(direction); // ì¶”ì  ëŒ€ì‹  ë°©í–¥ë§Œ ê¸°ì–µ
             projectile.damage = damage;
 
-            yield return new WaitForSeconds(0.07f); // ¹ß»ç µô·¹ÀÌ
+            yield return new WaitForSeconds(0.07f); // ë°œì‚¬ ë”œë ˆì´
         }
     }
 
@@ -60,10 +65,20 @@ public class EnergyBallWeapon : WeaponBase
 
         return nearest;
     }
+    public override string GetUpgradeText(UpgradeType type)
+    {
+        return type switch
+        {
+            UpgradeType.Damage => $"{weaponName} ë°ë¯¸ì§€ ì—…!!",
+            UpgradeType.Speed => $"{weaponName} ê³µê²© ì†ë„ ì¦ê°€!!",
+            UpgradeType.Count => $"{weaponName} ì—°ì‚¬ ++!!",
+            _ => "???"
+        };
+    }
 
     public override void UpgradeDamage()
     {
-        damage += 10f;
+        damage += 7f;
         level++;
     }
 
