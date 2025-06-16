@@ -988,9 +988,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equippedWeapons: []
   availableWeaponPrefabs:
+  - {fileID: 6930187637225388656, guid: d93d0b4e54e34da4292c5703348c42d6, type: 3}
   - {fileID: 4033404869363483838, guid: d866edf6a736be842bdf43694bc57fff, type: 3}
   - {fileID: 3640717316599233336, guid: 51cfe30add374454c83051743aa56d73, type: 3}
-  - {fileID: 6930187637225388656, guid: d93d0b4e54e34da4292c5703348c42d6, type: 3}
   maxWeapons: 3
 --- !u!1 &885188569
 GameObject:
@@ -2898,6 +2898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   Text_Timer: {fileID: 360288051}
+  isTimerRunning: 1
 --- !u!114 &7382826744384345805
 MonoBehaviour:
   m_ObjectHideFlags: 0

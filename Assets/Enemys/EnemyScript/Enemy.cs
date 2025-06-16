@@ -116,16 +116,16 @@ namespace Enemys.EnemyScript
         }
 
 
-        //void OnTriggerEnter2D(Collider2D other)
-        //{
-        //    if (other.CompareTag("Player"))
-        //    {
-        //        PlayerData playerdata = other.GetComponent<PlayerData>();
-        //        if (playerdata != null)
-        //        {
-        //            playerdata.TakeDamage(_damage);
-        //        }
-        //    }
-        //}
+        // void OnTriggerEnter2D(Collider2D other)
+        // {
+        //     if (other.CompareTag("Player"))
+        //     {
+        //         PlayerData playerdata = other.GetComponent<PlayerData>();
+        //         if (playerdata != null)
+        //         {
+        //             playerdata.TakeDamage(_damage);
+        //         }
+        //     }
+        // }
     }
 }

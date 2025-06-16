@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
             enemy.gameObject.SetActive(true); // 풀 사용 시 필요
         }
 
-        if (!endSpawned && endtimer >= 300f)
+        if (!endSpawned && endtimer >= 50f)
         {
             Vector3 randomPos = player.position + (Vector3)(Random.insideUnitCircle.normalized * 10f);
             Instantiate(EndPrefab, randomPos, Quaternion.identity);

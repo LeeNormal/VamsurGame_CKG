@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        _rb.MovePosition(_rb.position + _inputDir * _charMS * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + _inputDir * (_charMS * Time.fixedDeltaTime));
     }
 
     void UpdateAnimationAndDirection(float horizontal, float vertical)
