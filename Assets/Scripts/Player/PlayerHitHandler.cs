@@ -17,7 +17,7 @@ public class PlayerHitHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Enemy")) return;
+        if (!(other.CompareTag("Enemy") || other.CompareTag("End_Enemy"))) return;
         if (isInvincible || playerData.IsDead()) return;
 
         Enemy enemy = other.GetComponent<Enemy>();
