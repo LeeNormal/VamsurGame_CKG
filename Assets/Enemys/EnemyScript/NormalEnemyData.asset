@@ -27,13 +27,3 @@ MonoBehaviour:
     hp: 140
   - time: 120
     hp: 160
-  - time: 150
-    hp: 180
-  - time: 180
-    hp: 200
-  - time: 180
-    hp: 200
-  - time: 240
-    hp: 240
-  - time: 270
-    hp: 260

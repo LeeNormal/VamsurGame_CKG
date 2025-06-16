@@ -10,7 +10,7 @@ namespace Enemys.EnemyScript
         public float maxHp;
         public float baseSpeed;
         public float baseDamage;
-        public int expValue = 50; // ÀûÀÌ Á×À» ¶§ µå¶øÇÒ °æÇèÄ¡·®
+        public int expValue = 50; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½
 
         public bool faceLeftByDefault = true;
 

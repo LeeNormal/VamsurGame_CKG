@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2d0a7d1-23db-4247-b13b-cb7edc5413f6" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemySpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHitHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHitHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VamsurGame_CKG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VamsurGame_CKG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemys/EnemyScript/EnemyData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +122,7 @@
       <workItem from="1750077931333" duration="1151000" />
       <workItem from="1750081775042" duration="1441000" />
       <workItem from="1750099777678" duration="725000" />
+      <workItem from="1750108233934" duration="2644000" />
     </task>
     <servers />
   </component>
